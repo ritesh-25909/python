@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Flip Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0b2e;
+      color: white;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      width: 100%;
+    }
+    .card {
+      width: 100%;
+      height: 250px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      border-radius: 15px;
+    }
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00f0ff;
+      background-color: #111;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .card-back {
+      background-color: #112;
+      transform: rotateY(180deg);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      color: #00ffee;
+      white-space: pre-wrap;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00e0ff;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>1. Write a Python program to print "Welcome to Python".</strong></div>
+        <div class="card-back">print("Welcome to Python")</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>2. Create a variable to store your name and print it.</strong></div>
+        <div class="card-back">name = "Ritesh"
+print(name)</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>3. Store your age in a variable and print it with a message.</strong></div>
+        <div class="card-back">age = 18
+print("My age is", age)</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>4. Take input from the user for their name and print a greeting.</strong></div>
+        <div class="card-back">name = input("Enter your name: ")
+print("Hello", name)</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>5. Take input for two numbers and print their sum.</strong></div>
+        <div class="card-back">a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print("Sum:", a + b)</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>6. Write a program that checks if a person is adult (age ≥ 18).</strong></div>
+        <div class="card-back">age = int(input("Enter your age: "))
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are a minor")</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>7. Use a for loop to print numbers from 1 to 5.</strong></div>
+        <div class="card-back">for i in range(1, 6):
+    print(i)</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>8. Use a while loop to print "Hello" 3 times.</strong></div>
+        <div class="card-back">count = 1
+while count <= 3:
+    print("Hello")
+    count += 1</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>9. Write a function that prints "Learning Python is fun!"</strong></div>
+        <div class="card-back">def say_message():
+    print("Learning Python is fun!")
+
+say_message()</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>10. Create a list of your 3 favorite fruits and print them.</strong></div>
+        <div class="card-back">fruits = ["apple", "banana", "mango"]
+print(fruits)</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>11. Print the first and last item from a list called colors.</strong></div>
+        <div class="card-back">colors = ["red", "green", "blue"]
+print(colors[0])
+print(colors[-1])</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>12. Create a dictionary with your name and age. Print both values.</strong></div>
+        <div class="card-back">student = {"name": "Ritesh", "age": 18}
+print(student["name"])
+print(student["age"])</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>13. Add a comment in your program and print any message.</strong></div>
+        <div class="card-back"># This is a comment
+print("Python is easy!")</div>
+      </div>
+    </div>
+    
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front"><strong>14. Write a mini program that asks name and age, then says hello to the user.</strong></div>
+        <div class="card-back">name = input("Your name: ")
+age = input("Your age: ")
+print("Hello", name)
+print("You are", age, "years old")</div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
